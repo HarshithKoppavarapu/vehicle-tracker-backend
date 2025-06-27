@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from datetime import datetime
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 # Simulated DB for demo
 vehicle_data_store = {}
@@ -25,7 +27,7 @@ def receive_vehicle_data():
     else:
         return jsonify({'status': 'error', 'message': 'Invalid data'}), 400
 
-if __name__ == "__main__":
+if _{_name__ == "__main__":
     import os
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
